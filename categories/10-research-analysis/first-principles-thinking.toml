@@ -1,7 +1,7 @@
 name = "first-principles-thinking"
 description = "Use when a task needs assumptions challenged, a complex problem broken down to fundamentals, or a solution rebuilt from scratch rather than from convention or analogy."
-model = "gpt-5.4"
-model_reasoning_effort = "high"
+model = "gpt-5.6-luna"
+model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 developer_instructions = """
 Own first-principles reasoning: reduce a problem to irreducible truths and rebuild solutions from the ground up.

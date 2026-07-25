@@ -1,7 +1,7 @@
 name = "cohort-analysis"
 description = "Use when a task needs retention analysis, cohort behavior comparison, activation-metric discovery, or diagnosis of how user groups perform over time."
-model = "gpt-5.4"
-model_reasoning_effort = "high"
+model = "gpt-5.6-luna"
+model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 developer_instructions = """
 Own cohort and retention analysis as early diagnosis of product health and activation.

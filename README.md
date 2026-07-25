@@ -11,9 +11,8 @@
     <br />
 </div>
 
-   
 <div align="center">
-    
+
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 ![Subagent Count](https://img.shields.io/badge/subagents-171-blue?style=classic)
 [![Last Update](https://img.shields.io/github/last-commit/VoltAgent/awesome-codex-subagents?label=Last%20update&style=classic)](https://github.com/VoltAgent/awesome-codex-subagents)
@@ -40,6 +39,7 @@ Use Codex custom agent directories exactly as documented:
 4. Delegate explicitly in prompts (Codex does not auto-spawn custom subagents).
 
 Examples:
+
 ```bash
 mkdir -p ~/.codex/agents
 cp categories/01-core-development/backend-developer.toml ~/.codex/agents/
@@ -52,13 +52,11 @@ cp categories/04-quality-security/reviewer.toml .codex/agents/
 
 If you use agent configuration in Codex, keep it in `.codex/config.toml` under `[agents]` as described in the official docs.
 
-
 ## Sponsors
 
-|                                                                                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                                           |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                               |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <a href="https://lite.ego.app/?utm_source=awesome-codex-subagents&utm_medium=sponsor&utm_campaign=github-sponsor"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.voltagent.dev/awesome-repo/ego-lite/logo_wordmark_lite_white.svg"><img alt="Ego Lite" src="https://cdn.voltagent.dev/awesome-repo/ego-lite/logo_wordmark_lite_dark.svg" width="425"></picture></a> | [Ego Lite](https://lite.ego.app/?utm_source=awesome-codex-subagents&utm_medium=sponsor&utm_campaign=github-sponsor) is the fastest browser for your AI agents to run browser automation tasks, 3.45x faster than agent-browser (Vercel), always free, no setup, and lets your agents run 100+ browser tasks at the same time in their Spaces. |
-
 
 <div align="center">
 
@@ -66,7 +64,7 @@ If you use agent configuration in Codex, keep it in `.codex/config.toml` under `
 <tr>
 <td align="center" width="100%">
 <h4>👉 You can feature your product here and reach developers using AI coding agents like Claude Code, Codex, Gemini, and more.</h4>
-     
+
 <a href="https://sponsors.voltagent.dev/#awesome-codex-subagents"><img src="https://img.shields.io/badge/📩_Become_a_Sponsor-Contact_Us-blue?style=for-the-badge&logoColor=white" alt="Become a Sponsor" /></a>
 
 </td>
@@ -77,13 +75,12 @@ If you use agent configuration in Codex, keep it in `.codex/config.toml` under `
 
 ### Subagent Storage Locations
 
-| Type | Path | Availability | Precedence |
-|------|------|--------------|------------|
-| Project Subagents | `.codex/agents/` | Current project only | Higher |
-| Global Subagents | `~/.codex/agents/` | All projects | Lower |
+| Type              | Path               | Availability         | Precedence |
+| ----------------- | ------------------ | -------------------- | ---------- |
+| Project Subagents | `.codex/agents/`   | Current project only | Higher     |
+| Global Subagents  | `~/.codex/agents/` | All projects         | Lower      |
 
 Note: When naming conflicts occur, project-specific subagents override global ones.
-
 
 ## Subagent Structure
 
@@ -108,21 +105,17 @@ You are a [role description and expertise areas]...
 
 Each subagent includes a `model` field that automatically routes it to the right model -- balancing quality and cost:
 
-| Model | When It's Used | Examples |
-|-------|----------------|----------|
-| `gpt-5.4` | Deep reasoning -- architecture reviews, security audits, financial logic | `security-auditor`, `architect-reviewer`, `fintech-engineer` |
-| `gpt-5.3-codex-spark` | Fast scanning, synthesis, and lighter research tasks | `search-specialist`, `docs-researcher`, `agent-installer` |
+| Model                 | When It's Used                                                           | Examples                                                     |
+| --------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| `gpt-5.6-luna`        | Deep reasoning -- architecture reviews, security audits, financial logic | `security-auditor`, `architect-reviewer`, `fintech-engineer` |
+| `gpt-5.3-codex-spark` | Fast scanning, synthesis, and lighter research tasks                     | `search-specialist`, `docs-researcher`, `agent-installer`    |
 
 ### Sandbox Mode Philosophy
 
 Each subagent's `sandbox_mode` field controls filesystem access:
+
 - **Read-only agents** (reviewers, auditors): `sandbox_mode = "read-only"` - analyze without modifying
 - **Workspace-write agents** (developers, engineers): `sandbox_mode = "workspace-write"` - create and modify files
-
-
-
-
-
 
 ## Categories
 
@@ -147,6 +140,7 @@ Essential development subagents for everyday coding tasks.
 ### [02. Language Specialists](categories/02-language-specialists/)
 
 Language-specific experts with deep framework knowledge.
+
 - [**angular-architect**](categories/02-language-specialists/angular-architect.toml) - Angular 15+ enterprise patterns expert
 - [**cpp-pro**](categories/02-language-specialists/cpp-pro.toml) - C++ performance expert
 - [**csharp-developer**](categories/02-language-specialists/csharp-developer.toml) - .NET ecosystem specialist
@@ -178,7 +172,6 @@ Language-specific experts with deep framework knowledge.
 - [**swift-expert**](categories/02-language-specialists/swift-expert.toml) - iOS and macOS specialist
 - [**typescript-pro**](categories/02-language-specialists/typescript-pro.toml) - TypeScript specialist
 - [**vue-expert**](categories/02-language-specialists/vue-expert.toml) - Vue 3 Composition API expert
-
 
 ### [03. Infrastructure](categories/03-infrastructure/)
 
@@ -421,19 +414,23 @@ Codex does not spawn subagents automatically. Use explicit delegation prompts to
 ### Example Workflows
 
 **PR review workflow:**
+
 ```text
 Review this branch with parallel subagents. Have reviewer look for correctness, security, and missing tests. Have docs_researcher verify the framework APIs this patch depends on. Wait for both and summarize the findings with file references.
 ```
 
 **Bug investigation workflow:**
+
 ```text
 Investigate the broken settings flow. Have code_mapper trace the owning code paths, browser_debugger reproduce the bug in the browser, and frontend_developer propose the smallest fix after the failure is understood. Wait for the read-heavy agents first, then continue.
 ```
 
 **Repo exploration and planning workflow:**
+
 ```text
 Use search_specialist to locate the code related to payment retries, knowledge_synthesizer to summarize the current design, and refactoring_specialist to propose a minimal refactor plan. Return a concrete action list.
 ```
+
 ## Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
@@ -441,7 +438,6 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 - Submit new subagents via PR
 - Improve existing definitions
 - Report issues and bugs
-
 
 ## License
 

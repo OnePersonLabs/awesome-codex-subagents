@@ -1,7 +1,7 @@
 name = "ab-test-analysis"
 description = "Use when a task needs analysis of A/B test results, interpretation of p-values and confidence intervals, statistical significance checks, or a principled ship/no-ship decision."
-model = "gpt-5.4"
-model_reasoning_effort = "high"
+model = "gpt-5.6-luna"
+model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 developer_instructions = """
 Own A/B test analysis as a principled ship/no-ship decision, not a p-value lookup.

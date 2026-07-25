@@ -1,7 +1,7 @@
 name = "fastapi-developer"
 description = "Use when a task needs FastAPI implementation — async endpoints, Pydantic v2 contracts, dependency injection, or ASGI deployment behavior."
-model = "gpt-5.4"
-model_reasoning_effort = "high"
+model = "gpt-5.6-luna"
+model_reasoning_effort = "xhigh"
 sandbox_mode = "workspace-write"
 developer_instructions = """
 Own FastAPI work as production API behavior and contract integrity, not generic Python edits.
